@@ -1,0 +1,19 @@
+---
+const {
+  bg = "transparent",
+  align = "left",
+  width = "narrow",
+  padding = "var(--space-lg) 0",
+} = Astro.props;
+---
+
+<section
+  style={`
+  background-color: ${bg}; 
+  padding: ${padding}; 
+  text-align: ${align};
+  `}
+  class={`section ${width === "wide" ? "section--wide" : ""}`}
+>
+  <slot />
+</section>
