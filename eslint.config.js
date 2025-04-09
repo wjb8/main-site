@@ -1,40 +1,67 @@
 import astro from "eslint-plugin-astro";
 import js from "@eslint/js";
 import prettier from "eslint-plugin-prettier";
+import typescriptParser from "@typescript-eslint/parser";
+import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 
 export default [
+  // Ignore patterns
   {
     ignores: ["**/.astro/**", "dist/", "node_modules/"],
   },
 
-  // 1) Limit the JS recommended config to .js/.ts only
-  {
-    files: ["**/*.{js,ts}"],
-    ...js.configs.recommended,
-  },
+  // Base JS configuration
+  js.configs.recommended,
 
-  // 2) Astro override: parse .astro files with Astro’s parser
+  // TypeScript configuration
   {
-    files: ["**/*.astro"],
-    plugins: { astro },
+    files: ["**/*.{ts,tsx,astro}"],
+    plugins: {
+      "@typescript-eslint": typescriptPlugin,
+    },
     languageOptions: {
-      parser: astro.parser, // critical for frontmatter support
+      parser: typescriptParser,
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
       },
     },
     rules: {
-      ...astro.configs.recommended.rules,
+      ...typescriptPlugin.configs.recommended.rules,
     },
   },
 
-  // 3) Prettier rules for JS, TS, and Astro
+  // Astro configuration
+  ...astro.configs.recommended,
+
+  // JS/TS files configuration
+  {
+    files: ["**/*.{js,ts}"],
+    rules: {
+      // Add any specific rules for JS/TS files
+    },
+  },
+
+  // Astro files configuration
+  {
+    files: ["**/*.astro"],
+    rules: {
+      // Add any specific rules for Astro files
+    },
+  },
+
+  // Prettier integration
   {
     files: ["**/*.{js,ts,astro}"],
     plugins: { prettier },
     rules: {
-      "prettier/prettier": "warn",
+      "prettier/prettier": [
+        "warn",
+        {
+          plugins: ["prettier-plugin-astro"],
+          parser: "astro",
+        },
+      ],
     },
   },
 ];
