@@ -1,0 +1,17 @@
+---
+const { title } = Astro.props;
+---
+
+<div class="finder-window">
+  <div class="finder-titlebar">
+    <span>{title}</span>
+    <div class="window-controls">
+      <button class="close"></button>
+      <button class="minimize"></button>
+      <button class="maximize"></button>
+    </div>
+  </div>
+  <div class="finder-content">
+    <slot />
+  </div>
+</div>

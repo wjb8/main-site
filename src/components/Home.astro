@@ -1,36 +1,25 @@
 ---
-import logo from "../assets/logo.svg";
-import retroBkg from "../assets/retro-background.svg";
+import retroDesktop from "../assets/mac-desktop-bg.png";
+import FinderWindow from "./FinderWindow.astro";
+import DesktopIcon from "./DesktopIcon.astro";
 import "../styles/global.scss";
-import "../styles/components/home.scss";
+import "../styles/components/Hodme.scss";
 ---
 
-<div class="home-container">
-  <img
-    class="background-image"
-    src={retroBkg.src}
-    alt="Retro Background"
-    fetchpriority="high"
-  />
-  <main class="home-main">
-    <section>
-      <img src={logo.src} alt="Your Brand" class="logo" />
-      <h1 class="home-title">Your Modern-Retro Freelance Web Studio</h1>
-      <p class="lead">
-        Crafting unique, nostalgic, and future-ready digital experiences for
-        small businesses and creative projects.
-      </p>
-      <div class="actions">
-        <a class="button primary" href="#portfolio">View Portfolio</a>
-        <a class="button secondary" href="#contact">Work With Me</a>
-      </div>
-    </section>
-  </main>
+<div class="mac-desktop-container">
+  <img class="desktop-background" src={retroDesktop.src} alt="Retro Desktop" />
 
-  <footer class="highlight">
+  <div class="desktop-icons">
+    <DesktopIcon label="Portfolio" icon="folder" link="#portfolio" />
+    <DesktopIcon label="About Me" icon="text-file" link="#about" />
+    <DesktopIcon label="Contact" icon="email" link="#contact" />
+  </div>
+
+  <FinderWindow title="Welcome to My Studio">
     <p>
-      Currently accepting new projects for Spring 2025 &mdash; let's create
-      something unique together!
+      I'm James, a freelance web developer crafting nostalgic yet modern digital
+      experiences for creative and curious clients.
     </p>
-  </footer>
+    <a class="button primary" href="#portfolio">Open Portfolio Folder</a>
+  </FinderWindow>
 </div>

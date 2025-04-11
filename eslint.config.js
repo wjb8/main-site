@@ -1,67 +1,46 @@
-import astro from "eslint-plugin-astro";
-import js from "@eslint/js";
-import prettier from "eslint-plugin-prettier";
-import typescriptParser from "@typescript-eslint/parser";
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import eslint from "@eslint/js";
+import eslintPluginAstro from "eslint-plugin-astro";
+import eslintPluginImport from "eslint-plugin-import";
 
 export default [
   // Ignore patterns
   {
-    ignores: ["**/.astro/**", "dist/", "node_modules/"],
+    ignores: [".astro/**/*", "dist/**/*", "node_modules/**/*"],
   },
 
-  // Base JS configuration
-  js.configs.recommended,
+  // Base JS config
+  eslint.configs.recommended,
 
-  // TypeScript configuration
-  {
-    files: ["**/*.{ts,tsx,astro}"],
-    plugins: {
-      "@typescript-eslint": typescriptPlugin,
-    },
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-      },
-    },
-    rules: {
-      ...typescriptPlugin.configs.recommended.rules,
-    },
-  },
+  // Astro recommended config
+  ...eslintPluginAstro.configs.recommended,
 
-  // Astro configuration
-  ...astro.configs.recommended,
-
-  // JS/TS files configuration
-  {
-    files: ["**/*.{js,ts}"],
-    rules: {
-      // Add any specific rules for JS/TS files
-    },
-  },
-
-  // Astro files configuration
+  // Custom rules for Astro files with import checking
   {
     files: ["**/*.astro"],
-    rules: {
-      // Add any specific rules for Astro files
+    plugins: {
+      import: eslintPluginImport,
     },
-  },
-
-  // Prettier integration
-  {
-    files: ["**/*.{js,ts,astro}"],
-    plugins: { prettier },
     rules: {
-      "prettier/prettier": [
-        "warn",
+      "import/no-unresolved": "error",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
         {
-          plugins: ["prettier-plugin-astro"],
-          parser: "astro",
+          js: "never",
+          jsx: "never",
+          ts: "never",
+          tsx: "never",
+          astro: "always",
+          scss: "always",
         },
       ],
+    },
+    settings: {
+      "import/resolver": {
+        node: {
+          extensions: [".js", ".jsx", ".ts", ".tsx", ".astro", ".scss"],
+        },
+      },
     },
   },
 ];

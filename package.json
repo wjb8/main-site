@@ -9,27 +9,35 @@
     "astro": "astro",
     "format": "prettier --write 'src/**/*.{js,ts,astro}' --plugin=prettier-plugin-astro",
     "format:all": "prettier --write . --plugin=prettier-plugin-astro",
-    "lint": "eslint 'src/**/*.{js,ts,astro}'",
-    "lint:all": "eslint . --ext .js,.ts,.astro",
-    "lint:fix": "eslint 'src/**/*.{js,ts,astro}' --fix",
-    "check": "pnpm format && pnpm lint"
+    "lint": "eslint . --ext .js,.ts,.astro",
+    "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
+    "stylelint": "stylelint 'src/**/*.{scss,css,astro}'",
+    "stylelint:fix": "stylelint 'src/**/*.{scss,css,astro}' --fix",
+    "check": "pnpm format && pnpm lint && pnpm stylelint",
+    "typecheck": "astro check && tsc --noEmit"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "astro": "^5.6.1"
   },
   "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971",
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.24.0",
-    "@typescript-eslint/eslint-plugin": "^8.29.1",
-    "@typescript-eslint/parser": "^8.29.1",
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.1",
+    "eslint-import-resolver-typescript": "^4.3.2",
     "eslint-plugin-astro": "^1.3.1",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.6",
+    "postcss-html": "^1.8.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "sass": "^1.86.3",
-    "typescript": "^5.8.3"
+    "stylelint": "^16.18.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1"
   }
 }

@@ -1,0 +1,40 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-html/astro"],
+  "rules": {
+    "custom-property-no-missing-var-function": true,
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true,
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["use", "forward"]
+      }
+    ],
+    "scss/load-partial-extension": null,
+    "alpha-value-notation": null,
+    "color-function-notation": null,
+    "custom-property-empty-line-before": null,
+    "value-keyword-case": null,
+    "scss/at-rule-conditional-no-parentheses": true,
+    "no-invalid-position-at-import-rule": true,
+    "scss/at-import-no-partial-extension": true,
+    "scss/dollar-variable-no-missing-interpolation": true,
+    "scss/at-extend-no-missing-placeholder": true,
+    "scss/at-use-no-unnamespaced": true,
+    "scss/no-duplicate-mixins": true,
+    "scss/no-global-function-names": true,
+    "scss/comment-no-empty": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.astro"],
+      "customSyntax": "postcss-html"
+    },
+    {
+      "files": ["**/*.scss"],
+      "customSyntax": "postcss-scss"
+    }
+  ]
+}

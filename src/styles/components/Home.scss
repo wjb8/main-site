@@ -45,7 +45,7 @@
   gap: var(--space-md);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
   .home-container {
     padding: var(--space-md);
   }

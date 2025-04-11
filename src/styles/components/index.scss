@@ -1,4 +1,2 @@
-/* Import all component styles */
-@import "./button.scss";
-@import "./footer.scss";
-/* Add other component imports here as needed */
+@forward "./button.scss";
+@forward "./footer.scss";
