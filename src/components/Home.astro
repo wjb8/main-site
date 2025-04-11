@@ -1,0 +1,36 @@
+---
+import logo from "../assets/logo.svg";
+import retroBkg from "../assets/retro-background.svg";
+import "../styles/global.scss";
+import "../styles/components/home.scss";
+---
+
+<div class="home-container">
+  <img
+    class="background-image"
+    src={retroBkg.src}
+    alt="Retro Background"
+    fetchpriority="high"
+  />
+  <main class="home-main">
+    <section>
+      <img src={logo.src} alt="Your Brand" class="logo" />
+      <h1 class="home-title">Your Modern-Retro Freelance Web Studio</h1>
+      <p class="lead">
+        Crafting unique, nostalgic, and future-ready digital experiences for
+        small businesses and creative projects.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#portfolio">View Portfolio</a>
+        <a class="button secondary" href="#contact">Work With Me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="highlight">
+    <p>
+      Currently accepting new projects for Spring 2025 &mdash; let's create
+      something unique together!
+    </p>
+  </footer>
+</div>

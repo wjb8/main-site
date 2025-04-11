@@ -1,12 +1,74 @@
 @import "./tokens.scss";
+@import "./components/index.scss";
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-body);
-  font-size: var(--font-size-base);
   background-color: var(--color-bg);
   color: var(--color-text);
+  font-family: var(--font-body);
   line-height: var(--line-height-base);
+  margin: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.button {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  border: none;
   transition: var(--transition);
+}
+
+.button:hover {
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.highlight {
+  background-color: var(--color-highlight);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.text-muted {
+  color: var(--color-secondary);
+}
+
+.bg-accent-primary {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.bg-accent-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-bg);
+}
+
+.bg-highlight {
+  background-color: var(--color-highlight);
+  color: var(--color-text);
+}
+
+.rounded {
+  border-radius: var(--radius-md);
 }
