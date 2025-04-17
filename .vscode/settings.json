@@ -26,5 +26,10 @@
     "astro"
   ],
   "astro.languageServer.diagnostics.css": true,
-  "astro.languageServer.diagnostics.typescript": true
+  "astro.languageServer.diagnostics.typescript": true,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#2D0C89",
+    "titleBar.activeBackground": "#3F11C0",
+    "titleBar.activeForeground": "#FDFCFF"
+  }
 }
