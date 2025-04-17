@@ -1,0 +1,77 @@
+---
+const currentTime = new Date().toLocaleTimeString("en-US", {
+  hour: "numeric",
+  minute: "2-digit",
+  hour12: true,
+});
+---
+
+<div class="banner">
+  <div class="banner-content">
+    <div class="time">{currentTime}</div>
+    <div class="marquee">
+      <span>WELCOME TO ACTION PARK — best fuckin website ever</span>
+    </div>
+    <div class="menu-toggle">MENU</div>
+  </div>
+</div>
+
+<style lang="scss">
+  .banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    z-index: 1000;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+  }
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 var(--space-md);
+  }
+
+  .time {
+    flex: 0 0 auto;
+    padding-right: var(--space-md);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .marquee {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 var(--space-md);
+
+    span {
+      display: inline-block;
+      animation: marquee 10s linear infinite;
+    }
+  }
+
+  .menu-toggle {
+    flex: 0 0 auto;
+    padding-left: var(--space-md);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-secondary);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
