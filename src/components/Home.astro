@@ -1,25 +1,22 @@
 ---
-import retroDesktop from "../assets/mac-desktop-bg.png";
+import background from "../../assets/background.svg";
 import FinderWindow from "./FinderWindow.astro";
 import DesktopIcon from "./DesktopIcon.astro";
 import "../styles/global.scss";
 import "../styles/components/Home.scss";
 ---
 
-<div class="mac-desktop-container">
-  <img class="desktop-background" src={retroDesktop.src} alt="Retro Desktop" />
+<div class="desktop-container">
+  <img class="desktop-background" src={background.src} alt="Retro Desktop" />
 
   <div class="desktop-icons">
     <DesktopIcon label="Portfolio" icon="folder" link="#portfolio" />
-    <DesktopIcon label="About Me" icon="text-file" link="#about" />
-    <DesktopIcon label="Contact" icon="email" link="#contact" />
+    <DesktopIcon label="About" icon="folder" link="#about" />
+    <DesktopIcon label="Contact" icon="folder" link="#contact" />
   </div>
 
   <FinderWindow title="Welcome to My Studio">
-    <p>
-      I'm James, a freelance web developer crafting nostalgic yet modern digital
-      experiences for creative and curious clients.
-    </p>
+    <p>Something blach achajla oerjfsa lorum ipsem idoaa wpfoj emvop.</p>
     <a class="button primary" href="#portfolio">Open Portfolio Folder</a>
   </FinderWindow>
 </div>
