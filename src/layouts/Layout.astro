@@ -1,0 +1,32 @@
+---
+// src/layouts/Layout.astro
+const { title = "James — Freelance Developer" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <slot />
+    <!-- sections drop in -->
+
+    <footer class="site-footer">
+      © {new Date().getFullYear()} James McDonk
+    </footer>
+  </body>
+</html>
