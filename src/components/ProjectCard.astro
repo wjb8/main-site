@@ -1,0 +1,12 @@
+---
+import "../styles/components/ProjectCard.scss";
+
+const { image, alt, title, description, href } = Astro.props;
+---
+
+<article class="project-card">
+  <img src={image} alt={alt} />
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a class="button secondary" href={href}>View Project</a>
+</article>

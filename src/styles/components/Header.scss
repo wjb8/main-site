@@ -1,0 +1,39 @@
+@use "../breakpoints" as *;
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+  z-index: 100;
+}
+
+.site-header nav {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.site-header a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.2s;
+}
+
+.site-header a:hover,
+.site-header a:focus {
+  color: var(--color-primary);
+}
+
+@media (width <= $bp-sm) {
+  .site-header nav {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+}

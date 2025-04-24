@@ -1,0 +1,32 @@
+---
+import Section from "./Section.astro";
+import ProjectCard from "./ProjectCard.astro";
+import "../styles/components/Work.scss";
+---
+
+<Section id="work" align="center">
+  <h2>Work</h2>
+  <div class="projects-grid">
+    <ProjectCard
+      image="/images/project-1.jpg"
+      alt="Project 1"
+      title="Project 1"
+      description="Description for Project 1"
+      href="#"
+    />
+    <ProjectCard
+      image="/images/project-2.jpg"
+      alt="Project 2"
+      title="Project 2"
+      description="Description for Project 2"
+      href="#"
+    />
+    <ProjectCard
+      image="/images/project-3.jpg"
+      alt="Project 3"
+      title="Project 3"
+      description="Description for Project 3"
+      href="#"
+    />
+  </div>
+</Section>

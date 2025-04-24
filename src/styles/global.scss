@@ -1,6 +1,10 @@
 @use "./tokens.scss";
 @use "./components/index.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -71,4 +75,13 @@ h3 {
 
 .rounded {
   border-radius: var(--radius-md);
+}
+
+.lead {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }

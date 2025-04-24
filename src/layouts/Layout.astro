@@ -1,5 +1,7 @@
 ---
 // src/layouts/Layout.astro
+import "../styles/global.scss";
+
 const { title = "James — Freelance Developer" } = Astro.props;
 ---
 
@@ -9,7 +11,7 @@ const { title = "James — Freelance Developer" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
 
-    <link rel="stylesheet" href="/src/styles/global.css" />
+    <!-- Global styles imported at the top of the file -->
   </head>
 
   <body>

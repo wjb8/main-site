@@ -4,10 +4,12 @@ const {
   align = "left",
   width = "narrow",
   padding = "var(--space-lg) 0",
+  ...rest
 } = Astro.props;
 ---
 
 <section
+  {...rest}
   style={`
   background-color: ${bg}; 
   padding: ${padding}; 

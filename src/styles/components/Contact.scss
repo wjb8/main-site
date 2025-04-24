@@ -1,0 +1,30 @@
+.contact-form,
+.contact-info {
+  max-width: 480px;
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+}
+
+.contact-form form {
+  display: grid;
+  gap: var(--space-md);
+
+  input,
+  textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--color-muted);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-base);
+  }
+
+  button {
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+
+.contact-info a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
