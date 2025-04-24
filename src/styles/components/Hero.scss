@@ -61,6 +61,79 @@
   gap: var(--space-md);
 }
 
+.hero-content {
+  max-width: var(--content-width);
+  margin: var(--space-3xl) auto var(--space-2xl);
+  padding: 0 var(--space-md);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: var(--space-xl);
+
+  .greeting {
+    display: block;
+    font-size: var(--font-size-xl);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+  }
+
+  .headline {
+    display: block;
+    font-size: var(--font-size-4xl);
+    background: linear-gradient(
+      90deg,
+      var(--color-primary) 0%,
+      var(--color-accent) 100%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: var(--line-height-tight);
+  }
+}
+
+.lead {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-muted);
+  max-width: 38ch;
+  margin: 0 auto var(--space-2xl);
+  line-height: var(--line-height-relaxed);
+}
+
+.cta-group {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+
+  .button {
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: var(--radius-full);
+    font-weight: 500;
+    transition: all var(--transition-base);
+
+    &.primary {
+      background: var(--color-primary);
+      color: white;
+
+      &:hover {
+        background: var(--color-text);
+        transform: translateY(-1px);
+      }
+    }
+
+    &.secondary {
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+
+      &:hover {
+        background: var(--color-primary);
+        color: white;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
 @media screen and (width <= $bp-md) {
   .desktop-container {
     padding: var(--space-md);
@@ -77,5 +150,24 @@
   .actions {
     flex-direction: column;
     width: 100%;
+  }
+}
+
+@media (width <= 768px) {
+  .hero-content {
+    margin: var(--space-2xl) auto;
+  }
+
+  h1 .headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  .lead {
+    font-size: var(--font-size-lg);
+  }
+
+  .cta-group {
+    flex-direction: column;
+    padding: 0 var(--space-lg);
   }
 }

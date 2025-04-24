@@ -2,31 +2,49 @@
 import Section from "./Section.astro";
 import ProjectCard from "./ProjectCard.astro";
 import "../styles/components/Work.scss";
+
+const projects = [
+  {
+    title: "Project 1",
+    description:
+      "Description of project 1. This is a longer description to show how the card handles multiple lines of text.",
+    image: "/project1.jpg",
+    alt: "Project 1 screenshot",
+    href: "#",
+    tags: ["Astro", "React", "TypeScript"],
+  },
+  {
+    title: "Project 2",
+    description:
+      "Description of project 2. Another example of a project description.",
+    image: "/project2.jpg",
+    alt: "Project 2 screenshot",
+    href: "#",
+    tags: ["Next.js", "TailwindCSS"],
+  },
+  {
+    title: "Project 3",
+    description:
+      "Description of project 3. A third example to fill out the grid.",
+    image: "/project3.jpg",
+    alt: "Project 3 screenshot",
+    href: "#",
+    tags: ["Vue", "Node.js"],
+  },
+];
 ---
 
-<Section id="work" align="center">
-  <h2>Work</h2>
-  <div class="projects-grid">
-    <ProjectCard
-      image="/images/project-1.jpg"
-      alt="Project 1"
-      title="Project 1"
-      description="Description for Project 1"
-      href="#"
-    />
-    <ProjectCard
-      image="/images/project-2.jpg"
-      alt="Project 2"
-      title="Project 2"
-      description="Description for Project 2"
-      href="#"
-    />
-    <ProjectCard
-      image="/images/project-3.jpg"
-      alt="Project 3"
-      title="Project 3"
-      description="Description for Project 3"
-      href="#"
-    />
+<Section id="work">
+  <div class="container">
+    <div class="section-header">
+      <h2>Selected Work</h2>
+      <p class="section-intro">
+        Here are some of the projects I've worked on. Each one taught me
+        something new and helped me grow as a developer.
+      </p>
+    </div>
+    <div class="projects-grid">
+      {projects.map((project) => <ProjectCard {...project} />)}
+    </div>
   </div>
 </Section>
