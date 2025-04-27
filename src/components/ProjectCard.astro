@@ -1,4 +1,5 @@
 ---
+import Button from "./Button.astro";
 import "../styles/components/ProjectCard.scss";
 
 interface Props {
@@ -29,6 +30,6 @@ const { image, alt, title, description, href, tags = [] } = Astro.props;
         </ul>
       )
     }
-    <a class="button" href={href}>View Project</a>
+    <Button href={href} variant="tertiary">View Project</Button>
   </div>
 </article>

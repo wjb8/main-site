@@ -1,0 +1,26 @@
+---
+import "../styles/components/Button.scss";
+
+interface Props {
+  variant?: "primary" | "secondary" | "tertiary";
+  size?: "sm" | "md" | "lg";
+  href?: string;
+  class?: string;
+}
+
+const {
+  variant = "primary",
+  size = "md",
+  href,
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={["button", `button--${variant}`, `button--${size}`, className]}
+  {...rest}
+>
+  <slot />
+</a>

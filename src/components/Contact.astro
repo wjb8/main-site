@@ -1,5 +1,6 @@
 ---
 import Section from "./Section.astro";
+import Button from "./Button.astro";
 import "../styles/components/Contact.scss";
 ---
 
@@ -27,10 +28,12 @@ import "../styles/components/Contact.scss";
       </div>
 
       <div class="cta-container">
-        <a href="mailto:hello@yourdomain.com" class="button primary">
+        <Button href="mailto:hello@yourdomain.com" variant="primary" size="lg">
           Start a Project
-        </a>
-        <a href="#" class="button secondary"> Download Resume </a>
+        </Button>
+        <Button href="#" variant="secondary" size="lg">
+          Download Resume
+        </Button>
       </div>
     </div>
   </div>

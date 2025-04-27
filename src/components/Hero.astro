@@ -1,21 +1,21 @@
 ---
 import Section from "./Section.astro";
+import Button from "./Button.astro";
 import "../styles/components/Hero.scss";
 ---
 
 <Section id="hero">
   <div class="hero-content">
     <h1>
-      <span class="greeting">Hi, I'm James —</span>
-      <span class="headline">I build fast, accessible websites.</span>
+      <span class="headline">Fast, accessible websites.</span>
     </h1>
     <p class="lead">
       Freelance developer specialising in Astro, React and web-performance
       audits.
     </p>
     <div class="cta-group">
-      <a class="button primary" href="#work">See my work</a>
-      <a class="button secondary" href="#contact">Get in touch</a>
+      <Button href="#work" variant="primary">See my work</Button>
+      <Button href="#contact" variant="secondary">Get in touch</Button>
     </div>
   </div>
 </Section>
