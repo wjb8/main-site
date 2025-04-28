@@ -1,17 +1,17 @@
 :root {
   /* 🎨 COLORS */
-  --color-bg: #FFF8F0;              /* Off-White Sand */
-  --color-bg-alt: #F0EAFB;          /* Light pastel for alt backgrounds */
-  --color-text: #232323;            /* Deep Charcoal */
-  --color-text-muted: #A0A0A0;      /* Cool Gray */
+  --color-bg: #fae5df; /* Soft Peach (Background) */
+  --color-bg-alt: #f7eae4; /* Slightly lighter peach for alt backgrounds */
+  --color-text: #2e2e2e; /* Charcoal (Main Text) */
+  --color-text-muted: #8b6f8a; /* Muted Purple (Muted Text) */
 
-  --color-primary: #FF5CA7;         /* Pink Flamingo */
-  --color-primary-light: #FFD1EA;   /* Light Pink */
-  --color-secondary: #5CE1FF;       /* Pool Blue */
-  --color-accent: #FFF685;          /* Sunshine Yellow */
+  --color-primary: #d9822b; /* Vibrant Orange (Primary) */
+  --color-primary-light: #ffd8a8; /* Light Orange (Primary Light) */
+  --color-secondary: #5e7e9f; /* Slate Blue (Secondary) */
+  --color-accent: #8b6f8a; /* Muted Purple (Accent) */
 
-  --color-success: #6FFFB0;         /* Palm Green */
-  --color-error: #FF3B30;           /* Vivid Red (distinct from primary) */
+  --color-success: #6fffb0; /* Palm Green */
+  --color-error: #ff3b30; /* Vivid Red (distinct from primary) */
 
   /* 🔠 TYPOGRAPHY */
   --font-heading: "Syne", "Space Grotesk", system-ui, -apple-system, sans-serif;

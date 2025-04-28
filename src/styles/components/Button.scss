@@ -1,9 +1,5 @@
-.button,
-.button:visited,
-.button:active,
-.button:focus,
-.button:hover {
-  color: var(--color-bg) !important;
+.button {
+  color: var(--color-bg);
   text-decoration: none !important;
   background: none;
   border: none;
@@ -12,6 +8,10 @@
   transition: all var(--transition-base);
   position: relative;
   cursor: pointer;
+  border-radius: var(--radius-full);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-base);
+  display: inline-block;
 }
 
 .button--primary {
@@ -46,6 +46,13 @@
   font-size: var(--font-size-lg);
 }
 
+/* Utility for full-width buttons (optional, not default) */
+.button--block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
 /* Hover states - consistent for all */
 .button--primary:hover,
 .button--secondary:hover,
@@ -66,4 +73,4 @@
 .button:hover::before {
   display: none !important;
   content: none !important;
-} 
+}
