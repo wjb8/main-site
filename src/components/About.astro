@@ -1,5 +1,6 @@
 ---
 import Section from "./Section.astro";
+import SectionHeader from "./SectionHeader.astro";
 import "../styles/components/About.scss";
 
 const skills = [
@@ -26,7 +27,7 @@ const getRandomRotation = () => {
   <div class="container">
     <div class="about-content">
       <div class="about-text">
-        <h2>About Me</h2>
+        <SectionHeader title="About Me" size={2} />
         <div class="bio">
           <p>
             I'm a freelance web developer with over 5 years of experience
@@ -47,7 +48,7 @@ const getRandomRotation = () => {
       </div>
 
       <div class="skills-section">
-        <h3>Skills & Technologies</h3>
+        <SectionHeader title="Skills & Technologies" size={3} />
         <ul class="skills-list">
           {
             skills.map((skill) => (

@@ -4,30 +4,17 @@
   max-width: var(--site-width);
   margin: 0 auto;
   padding: 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.section-header {
-  max-width: var(--content-width);
-  margin: 0 auto var(--space-3xl);
+.work-intro {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2xl);
   text-align: center;
-
-  h2 {
-    font-size: var(--font-size-3xl);
-    margin-bottom: var(--space-md);
-    background: linear-gradient(
-      90deg,
-      var(--color-primary) 0%,
-      var(--color-accent) 100%
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .section-intro {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-muted);
-    line-height: var(--line-height-relaxed);
-  }
+  max-width: var(--content-width);
 }
 
 .projects-grid {
@@ -35,19 +22,13 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
   gap: var(--space-xl);
   margin-bottom: var(--space-3xl);
+  width: 100%;
 }
 
 @media (width <= 768px) {
-  .section-header {
-    margin-bottom: var(--space-2xl);
-
-    h2 {
-      font-size: var(--font-size-2xl);
-    }
-
-    .section-intro {
-      font-size: var(--font-size-base);
-    }
+  .work-intro {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-xl);
   }
 
   .projects-grid {
