@@ -1,14 +1,13 @@
 ---
 import Section from "./Section.astro";
 import Button from "./Button.astro";
+import SectionHeader from "./SectionHeader.astro";
 import "../styles/components/Hero.scss";
 ---
 
 <Section id="hero">
   <div class="hero-content">
-    <h1>
-      <span class="headline">Fast, accessible websites.</span>
-    </h1>
+    <SectionHeader title="Fast, accessible websites." size={1} />
     <p class="lead">
       Freelance developer specialising in Astro, React and web-performance
       audits.

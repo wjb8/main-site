@@ -1,9 +1,5 @@
 .button {
-  color: var(--color-bg);
-  text-decoration: none !important;
-  background: none;
-  border: none;
-  outline: none;
+  color: var(--color-text);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
   position: relative;
@@ -15,13 +11,12 @@
 }
 
 .button--primary {
-  background-color: var(--color-primary) !important;
-  color: var(--color-bg) !important;
+  background-color: var(--color-primary)
 }
 
 .button--secondary {
-  background-color: var(--color-primary-light) !important;
-  color: var(--color-primary) !important;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
 }
 
 .button--tertiary {
@@ -46,18 +41,28 @@
   font-size: var(--font-size-lg);
 }
 
-/* Utility for full-width buttons (optional, not default) */
+/* Utility for full-width buttons */
 .button--block {
   display: block;
   width: 100%;
   text-align: center;
 }
 
-/* Hover states - consistent for all */
-.button--primary:hover,
-.button--secondary:hover,
+.button--primary:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 .button--tertiary:hover {
-  background-color: var(--color-secondary) !important;
+  background-color: var(--color-secondary);
   color: var(--color-bg) !important;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
@@ -69,8 +74,8 @@
 }
 
 /* Remove shimmer effect */
-.button::before,
-.button:hover::before {
-  display: none !important;
-  content: none !important;
-}
+// .button::before,
+// .button:hover::before {
+//   display: none !important;
+//   content: none !important;
+// }

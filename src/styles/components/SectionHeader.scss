@@ -1,13 +1,7 @@
 .section-header {
   position: relative;
-  display: inline-block;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-secondary) 100%
-  );
-  background-clip: text;
-  color: transparent;
+  display: block;
+  color: var(--color-text);
   margin-bottom: var(--space-xl);
 
   &::after {
@@ -20,7 +14,7 @@
     background: linear-gradient(
       to right,
       var(--color-primary),
-      var(--color-secondary)
+      var(--color-primary-dark)
     );
     transform: scaleX(0);
     transform-origin: right;

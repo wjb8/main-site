@@ -1,0 +1,29 @@
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  z-index: 200;
+  gap: 5px;
+  padding: 5px;
+  pointer-events: auto;
+  transition: background 0.2s;
+
+  &:hover .hamburger-line {
+    background-color: var(--color-primary);
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: var(--color-text);
+    border-radius: 2px;
+    transition: all var(--transition-base);
+  }
+}

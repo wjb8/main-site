@@ -6,6 +6,11 @@ html {
   background-color: var(--color-bg);
 }
 
+p {
+    cursor: default;
+    
+  }
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -38,24 +43,7 @@ a {
   position: relative;
 }
 
-a:hover {
-  color: var(--color-secondary);
-}
-
-a:not(.button, .button *)::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--color-secondary);
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform var(--transition-base);
-}
-
-a:not(.button):hover::after {
+a:not(.button):not(.nav a):hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

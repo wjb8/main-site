@@ -1,6 +1,6 @@
 ---
-// src/layouts/Layout.astro
 import "../styles/global.scss";
+import NavBar from "../components/NavBar.astro";
 
 const { title = "James — Freelance Developer" } = Astro.props;
 ---
@@ -20,21 +20,10 @@ const { title = "James — Freelance Developer" } = Astro.props;
       rel="stylesheet"
     />
     <title>{title}</title>
-
-    <!-- Global styles imported at the top of the file -->
   </head>
 
   <body>
-    <header class="site-header">
-      <div class="container">
-        <nav>
-          <a href="#hero">Home</a>
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <NavBar />
 
     <main>
       <slot />
@@ -49,6 +38,10 @@ const { title = "James — Freelance Developer" } = Astro.props;
 </html>
 
 <style lang="scss">
+  body {
+    background: var(--color-bg);
+  }
+
   .container {
     max-width: var(--site-width);
     margin: 0 auto;
@@ -60,28 +53,9 @@ const { title = "James — Freelance Developer" } = Astro.props;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 100;
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: var(--space-lg);
-      padding: var(--space-md) 0;
-    }
-
-    a {
-      color: var(--color-text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color var(--transition-fast);
-
-      &:hover {
-        color: var(--color-primary);
-      }
-    }
   }
 
   .site-footer {
