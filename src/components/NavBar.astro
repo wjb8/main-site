@@ -3,9 +3,31 @@ import "../styles/components/NavBar.scss";
 import Hamburger from "./Hamburger.astro";
 ---
 
-<header class="nav-container">
+<header class="nav-container" id="navbar">
   <div class="nav-content">
-    <p><b>parapet</b>creative</p>
+    <p class="nav-logo"><b>parapet</b>creative</p>
     <Hamburger />
   </div>
 </header>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const navContent = document.querySelector(".nav-content");
+  const maxScroll = 240; // px after which the effect is maxed out
+  const onScroll = () => {
+    const scrollY = window.scrollY;
+    const opacity = Math.min(scrollY / maxScroll, 1) * 0.3; // limit opacity to 30%
+    navbar?.classList.toggle("scrolled", scrollY > 2);
+    navbar?.style.setProperty("--navbar-bg-opacity", opacity.toFixed(3));
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  setTimeout(() => {
+    navContent?.classList.add("slide-in");
+  }, 250);
+  if (import.meta.hot) {
+    import.meta.hot.dispose(() => {
+      window.removeEventListener("scroll", onScroll);
+    });
+  }
+</script>

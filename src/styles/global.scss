@@ -7,9 +7,8 @@ html {
 }
 
 p {
-    cursor: default;
-    
-  }
+  cursor: default;
+}
 
 body {
   background-color: var(--color-bg);
@@ -37,15 +36,9 @@ body::before {
 }
 
 a {
-  color: var(--color-primary);
   text-decoration: none;
   transition: all var(--transition-base);
   position: relative;
-}
-
-a:not(.button):not(.nav a):hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
 }
 
 h1,

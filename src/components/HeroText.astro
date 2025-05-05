@@ -1,0 +1,38 @@
+---
+import "../styles/components/HeroText.scss";
+
+interface Props {
+  top: string;
+  bottom: string;
+  topAlign?: "left" | "center" | "right";
+  bottomAlign?: "left" | "center" | "right";
+  topSize?: "lg" | "xl" | "xxl" | "huge";
+  bottomSize?: "lg" | "xl" | "xxl" | "huge";
+}
+
+const {
+  top,
+  bottom,
+  topAlign = "center",
+  bottomAlign = "center",
+  topSize = "huge",
+  bottomSize = "huge",
+} = Astro.props;
+---
+
+<div class="hero-text">
+  <span
+    class:list={[
+      `hero-text-top`,
+      `hero-text-align-${topAlign}`,
+      `hero-text-size-${topSize}`,
+    ]}>{top}</span
+  >
+  <span
+    class:list={[
+      `hero-text-bottom`,
+      `hero-text-align-${bottomAlign}`,
+      `hero-text-size-${bottomSize}`,
+    ]}>{bottom}</span
+  >
+</div>

@@ -1,17 +1,39 @@
 .nav-container {
   position: fixed;
   width: 100%;
-  background: transparent;
   z-index: 100;
   pointer-events: auto;
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
+
+  &.scrolled {
+    background: linear-gradient(
+      180deg,
+      rgba(40, 40, 60, var(--navbar-bg-opacity, 0.08)) 60%,
+      rgba(40, 40, 60, calc(var(--navbar-bg-opacity, 0.08) * 0.5)) 100%,
+      rgba(40, 40, 60, 0) 120%
+    );
+  }
 }
 
 .nav-content {
-  max-width: 900px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
   height: 56px;
+}
+
+.nav-logo {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition:
+    transform 0.6s cubic-bezier(0.77, 0, 0.18, 1),
+    opacity 0.6s;
+}
+
+.nav-content.slide-in .nav-logo {
+  opacity: 1;
+  transform: translateX(0);
 }

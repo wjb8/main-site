@@ -13,10 +13,8 @@
   padding: 5px;
   pointer-events: auto;
   transition: background 0.2s;
-
-  &:hover .hamburger-line {
-    background-color: var(--color-primary);
-  }
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 
   .hamburger-line {
     display: block;
@@ -25,5 +23,22 @@
     background-color: var(--color-text);
     border-radius: 2px;
     transition: all var(--transition-base);
+  }
+
+  &:hover .hamburger-line {
+    background-color: var(--color-primary);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background: transparent;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
 }
