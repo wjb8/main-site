@@ -4,10 +4,9 @@ import "../styles/components/SectionHeader.scss";
 interface Props {
   title: string;
   headerSize?: 1 | 2 | 3 | 4 | 5 | 6;
-  textSize?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl" | "huge";
 }
 
-const { title, headerSize = 2, textSize } = Astro.props;
+const { title, headerSize = 2 } = Astro.props;
 
 const Tag = `h${headerSize}`;
 ---
@@ -15,12 +14,6 @@ const Tag = `h${headerSize}`;
 <!-- // Using class:list here avoids a TypeScript/JSX linter error that occurs when
 passing 'class' to a dynamic tag in Astro. This is a known limitation:
 https://github.com/withastro/astro/issues/6205 -->
-<Tag
-  class:list={[
-    `section-header`,
-    `section-header-${headerSize}`,
-    textSize && `section-header-text-${textSize}`,
-  ]}
->
+<Tag class:list={[`section-header`, `section-header-${headerSize}`]}>
   {title}
 </Tag>

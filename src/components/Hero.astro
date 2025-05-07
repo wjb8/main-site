@@ -1,14 +1,20 @@
 ---
 import Section from "./Section.astro";
 import Button from "./Button.astro";
-import SectionHeader from "./SectionHeader.astro";
+import HeroText from "./HeroText.astro";
 import "../styles/components/Hero.scss";
 ---
 
 <Section id="hero">
   <div class="hero-content">
-    <SectionHeader title="STAND" textSize="huge" />
-    <SectionHeader title="OUT" textSize="huge" />
+    <HeroText
+      top="STAND"
+      bottom="OUT"
+      topAlign="left"
+      bottomAlign="right"
+      topSize="7.5rem"
+      bottomSize="6rem"
+    />
     <p class="lead">
       Freelance developer specialising in Astro, React and web-performance
       audits.

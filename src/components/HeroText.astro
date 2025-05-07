@@ -6,8 +6,8 @@ interface Props {
   bottom: string;
   topAlign?: "left" | "center" | "right";
   bottomAlign?: "left" | "center" | "right";
-  topSize?: "lg" | "xl" | "xxl" | "huge";
-  bottomSize?: "lg" | "xl" | "xxl" | "huge";
+  topSize?: string | number;
+  bottomSize?: string | number;
 }
 
 const {
@@ -25,14 +25,26 @@ const {
     class:list={[
       `hero-text-top`,
       `hero-text-align-${topAlign}`,
-      `hero-text-size-${topSize}`,
-    ]}>{top}</span
+      typeof topSize === "string" && `hero-text-size-${topSize}`,
+      "fade-in-ltr",
+    ]}
+    style={typeof topSize === "number"
+      ? `font-size: ${topSize}px;`
+      : typeof topSize === "string"
+        ? `font-size: ${topSize};`
+        : undefined}>{top}</span
   >
   <span
     class:list={[
       `hero-text-bottom`,
       `hero-text-align-${bottomAlign}`,
-      `hero-text-size-${bottomSize}`,
-    ]}>{bottom}</span
+      typeof bottomSize === "string" && `hero-text-size-${bottomSize}`,
+      "fade-in-rtl",
+    ]}
+    style={typeof bottomSize === "number"
+      ? `font-size: ${bottomSize}px; animation-delay: 0.7s;`
+      : typeof bottomSize === "string"
+        ? `font-size: ${bottomSize}; animation-delay: 0.7s;`
+        : "animation-delay: 0.7s;"}>{bottom}</span
   >
 </div>

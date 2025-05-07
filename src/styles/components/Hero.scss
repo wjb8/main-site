@@ -62,9 +62,14 @@
 }
 
 .hero-content {
-  margin: var(--space-3xl) auto var(--space-2xl);
-  padding: 0 var(--space-md);
+  margin: var(--space-3xl) 0 var(--space-2xl) 0;
+  padding: 0;
   text-align: center;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .lead {
@@ -73,6 +78,7 @@
   max-width: 38ch;
   margin: 0 auto var(--space-2xl);
   line-height: var(--line-height-relaxed);
+  font-family: var(--font-body);
 }
 
 .cta-group {
@@ -102,7 +108,8 @@
 
 @media (width <= 768px) {
   .hero-content {
-    margin: var(--space-2xl) auto;
+    margin: var(--space-2xl) 0 0 0;
+    padding: 0;
   }
 
   .lead {
