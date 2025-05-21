@@ -1,24 +1,13 @@
 ---
 import Section from "./Section.astro";
 import Button from "./Button.astro";
-import HeroText from "./HeroText.astro";
+import HeroAnimated from "./HeroAnimated.svelte";
 import "../styles/components/Hero.scss";
 ---
 
 <Section id="hero">
   <div class="hero-content">
-    <HeroText
-      top="STAND"
-      bottom="OUT"
-      topAlign="left"
-      bottomAlign="right"
-      topSize="7.5rem"
-      bottomSize="6rem"
-    />
-    <p class="lead">
-      Freelance developer specialising in Astro, React and web-performance
-      audits.
-    </p>
+    <HeroAnimated client:load />
     <div class="cta-group">
       <Button href="#work" variant="primary">See my work</Button>
       <Button href="#contact" variant="secondary">Get in touch</Button>
